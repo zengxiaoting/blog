@@ -80,6 +80,47 @@
 		background-position: -15px  top;
 	}
     </style>
+    <style type="text/css" media="all">
+    html,body{
+     background:#000;
+     overflow: hidden;
+    }
+    p.shine
+    {
+        position: relative;
+        width: 700px;
+    }
+    .shine
+    {
+        height: 100px;
+        background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+        -webkit-background-size: 125px;
+        color: rgba(255, 255, 255, 0.1);
+        -webkit-background-clip: text;
+            font-family:"微软雅黑";
+            font-size:60px;
+            font-weight:bold;
+            display:block;
+            position:absolute;
+            left:50%; margin-left:-350px;
+            top:50%; margin-top:100px;
+        -webkit-animation-name: shine;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+    }
+
+    @-webkit-keyframes shine
+    {
+        0%
+        {
+            background-position: top left;
+        }
+        100%
+        {
+            background-position: top right;
+        }
+    }
+    </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -136,8 +177,8 @@
 			<li><a href="#" class="bullet" id="3" onclick="bullet(this)" value=3>3</a></li>
 			<li><a href="#" class="next" id="ne" onclick="next(this)"></a></li>
 		</ul>
-	</div>
-
+             </div>
+            <div style="display:inline"><span><p class="shine">12312313</p></span></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
