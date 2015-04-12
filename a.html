@@ -1,0 +1,17 @@
+<html>
+    <script>
+String.prototype.render=        function(b){
+    for(item in b){
+        this.replace("/"+item+"/",b[item]);
+        alert(item);
+        alert(b[item]);
+        alert(this)
+    }
+    return this;
+}
+var greeting = 'my name is ${name}, age ${age}';
+var result = greeting.render({name: 'XiaoMing', age: 11});
+alert(result);  //my name is XiaoMing, age 11
+
+    </script>
+</html>

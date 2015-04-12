@@ -5,255 +5,109 @@
 <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Zxt's Blog</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-    	img{
-    		border:0;
-    	}
-    	.slider {
-	margin: 0 auto;
-	width: 990px
-	}
-	.slider-container {
-	height: 300px;
-	margin: 0 auto 20px;
-	overflow: hidden;
-	position: relative;
-	width: 990px;
-	}
-	.slider-container .slider-wrapper {
-		left: 0px;
-		overflow: hidden;
-		position: absolute;
-		text-align: center;
-		top: 0;
-		width: 5000em; /*Fix for prevent display errors*/
-		-webkit-transition: all 800ms ease;
-		-moz-transition: all 800ms ease;
-		-o-transition: all 800ms ease;
-		transition: all 800ms ease;
-	}
-	.slider-container .slide{
-		float: left;
-		height: 300px;
-		overflow: hidden;
-		position: relative;
-		width: 990px;
-	}
-	.slider-nav{
-		text-align:center;
-		width: 990px;
-	}
-	.slider-nav li{
-		display: inline;
-		padding: 3px;
-	}
-	.bullet,.bullet-active{
-		outline:0 none !important; 
-		blr: expression(this.onFocus=this.blur()); 
-		background-color: #aaaaaa;
-		border-radius: 50%;
-		text-indent: -9000px;
-		display:inline-block;
-		height:16px;
-		width: 16px;
-	}
-	.bullet-active{
-		background-color: #ff0000;
-	}
-	.prev,.next{
-		outline:0 none !important; 
-		blr: expression(this.onFocus=this.blur()); 
-		background: url('css/img/sprite.png');
-		overflow: hidden;
-		display: inline-block;
-		height: 16px;
-		width: 16px;
-	}
-	.next{
-		background-position: -15px  top;
-	}
-    </style>
-    <style type="text/css" media="all">
-    html,body{
-     background:#000;
-     overflow: hidden;
-    }
-    p.shine
-    {
-        position: relative;
-        width: 700px;
-    }
-    .shine
-    {
-        height: 100px;
-        background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
-        -webkit-background-size: 125px;
-        color: rgba(255, 255, 255, 0.1);
-        -webkit-background-clip: text;
-            font-family:"微软雅黑";
-            font-size:60px;
-            font-weight:bold;
-            display:block;
-            position:absolute;
-            left:50%; margin-left:-350px;
-            top:50%; margin-top:100px;
-        -webkit-animation-name: shine;
-        -webkit-animation-duration: 2s;
-        -webkit-animation-iteration-count: infinite;
-    }
-
-    @-webkit-keyframes shine
-    {
-        0%
-        {
-            background-position: top left;
-        }
-        100%
-        {
-            background-position: top right;
-        }
-    }
-    </style>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-    	<div class="navbar-header">
-    		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-    		<span class="sr-only">Toggle navigation</span>
-    		<span class="icon-bar"></span>
-    		<span class="icon-bar"></span>
-    		<span class="icon-bar"></span>	
-    		</button>
-    		<a class="navbar-brand" href="#">Blog</a>
-    	</div>
-    	<div id="navbar" class="collapse navbar-collapse">
-    		<ul class="nav navbar-nav">
-    			<li class="active"><a href="#">Home</a></li>
-    			<li><a href="#about" tabindex="-1" data-toggle="tab">About</a></li>
-    			<li><a href="#contact" tabindex="-1" data-toggle="tab">Contact</a></li>
-    			<li class="dropdown">
-    				<a href="#" class="dropdown-toggle" data-toggle="dropdown">more<b class="caret"></b>
-    				</a>
-    				<ul class="dropdown-menu">
-    					<li><a href="#">Action</a></li>
-    				</ul>
-			</li>
-    		</ul>
-    		<form action="" class="navbar-form navbar-left" role="search">
-    			<div class="form-group">
-    				<input type="text" class="form-control"/>
-    			</div>
-    			<button type="button" class="btn btn-default">what</button>
-		</form>
-    	</div> 
-    </div>
-    </nav>
-  <body id="home">
-             <div class="slider">
-		<div class="slider-container">
-			<div class="slider-wrapper",id="wrap">
-				<div class="slide"><img  alt="jQuery Slider with CSS Transitions" src="images/item1.jpg"></div>
-				<div class="slide"><img  alt="jQuery Slider with CSS Transitions" src="images/item2.jpg"></div>
-				<div class="slide"><img  alt="jQuery Slider with CSS Transitions" src="images/item3.jpg"></div>
-			</div>
-		</div>
-		<ul class="slider-nav">
-			<li><a href="#" class="prev" id="pr" onclick="prev(this)"></a></li>	
-			<li><a class="bullet-active" href="#" id="1" onclick="bullet(this)" value=1>1</a></li>
-			<li><a class="bullet" href="#" id="2" onclick="bullet(this)" value=2>2</a></li>
-			<li><a href="#" class="bullet" id="3" onclick="bullet(this)" value=3>3</a></li>
-			<li><a href="#" class="next" id="ne" onclick="next(this)"></a></li>
-		</ul>
-             </div>
-            <div style="display:inline"><span><p class="shine">12312313</p></span></div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="menu">
+            <li class="level1">
+                <a href="#none">衬衫</a>
+                <ul class="level2">
+                    <li><a href="#none">短袖</a></li>
+                    <li><a href="#none">长袖</a></li>
+                </ul>
+            </li>
+            <li class="level1">
+                <a href="#none">卫衣</a>
+                <ul class="level2">
+                    <li><a href="#none">短袖</a></li>
+                    <li><a href="#none">长袖</a></li>
+                </ul>
+            </li>
+            <li class="level1">
+                <a href="#none">裤子</a>
+                <ul class="level2">
+                    <li><a href="#none">短</a></li>
+                    <li><a href="#none">长</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <form id="form1">
+            <div>可用元素  ：<input name="add" value="enable"/></div>
+            <div>不可用元素：<input name="email" disabled="disabled" value="disable"/></div>
+            <div>
+                <input type="checkbox" name="newsletter1" value="1"/>1
+                <input type="checkbox" name="newsletter2" value="2"/>2
+            </div>
+            <div> 
+                <select name="test1">
+                    <option>html</option>
+                    <option>css</option>
+                    <option>jQuery</option>
+                    <option>bootstrap</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <table style="margin:auto">
+        <tr>
+            <td>JavaScript</td>
+            <td>Html</td>
+            <td>Jquery</td>
+        </tr>
+        <tr>
+            <td>JavaScript1</td>
+            <td>Html1</td>
+            <td>Jquery1</td>
+        </tr>
+        <tr>
+            <td>JavaScript2</td>
+            <td>Html2</td>
+            <td>Jquery2</td>
+        </tr>
+    </table>
+    <div align="center"><button class="show">显示全部</button></div>
     <script type="text/javascript">
-     	function bullet(obj){
-     		// document.getElementsByClassName("bullet-active").className="bullet";
-     		var tags=tags||document.getElementsByTagName("*");
-     		var list=[];
-     		for(var k in tags){
-     			var tag=tags[k];
-     			if(tag.className=="bullet-active"){
-     				tag.className="bullet";
-     				break;
-     			}
-     		}
-		obj.className="bullet-active";
-		var l=(obj.innerHTML-1)*990;
-	    	$(".slider-wrapper").css("left","-"+l+"px");
-     	}
-     	function next(obj){
-     		var tags=tags||document.getElementsByTagName("*");
-     		var list=[];
-     		var l;
-     		for(var k in tags){
-     			var tag=tags[k];
-     			if(tag.className=="bullet-active"||tag.className=="bullet"){
-     				list.push(tag);
-     			}
-     		}
-     		for(var k in list){
-     			var itm=list[k];
-     			if(itm.className=="bullet-active"){
-     				itm.className="bullet";
-     				if(k==list.length-1){
-     					l=0;
-     					list[0].className="bullet-active";
-     				}
-     				else{
-     					l=(++k)*990;
-     					list[k].className="bullet-active";
-     				}
-     				break;
-     			}
-     		}
-	    	$(".slider-wrapper").css("left","-"+l+"px");
-     	}
-     	function prev(obj){
-     		var tags=tags||document.getElementsByTagName("*");
-     		var list=[];
-     		var l;
-     		for(var k in tags){
-     			var tag=tags[k];
-     			if(tag.className=="bullet-active"||tag.className=="bullet"){
-     				list.push(tag);
-     			}
-     		}
-     		for(var k in list){
-     			var itm=list[k];
-     			if(itm.className=="bullet-active"){
-     				itm.className="bullet";
-     				if(k==0){
-     					l=list.length-1;
-     					l=l*990;
-     					list[list.length-1].className="bullet-active";
-     				}
-     				else{
-     					l=(--k)*990;
-     					list[k].className="bullet-active";
-     				}
-     				break;
-     			}
-     		}
-	    	$(".slider-wrapper").css("left","-"+l+"px");
-     	}
+        var $list=$("table tr:gt(0):not(:last)").hide();
+        $("option").filter(":contains('css')").attr("selected","selected");
+        $("body").css("background","#bbffaa");
+        $("button").click(function(){
+            if($("table tr:gt(0):not(:last)").is(":visible")){
+                $("table tr:gt(0):not(:last)").hide();
+                $(this).text("show");
+                $("table tr:eq(0)").css("color","black");
+            }
+            else{
+                $("table tr:gt(0):not(:last)").show();
+                $(this).text("hide");
+                $("table tr:eq(0)").css("color","red");
+            }
+        });
+        var $t1=$("<tr><td>JS3</td><td>HTML</td><td>jquery</td></tr>");
+        $t1.appendTo("table");
+        $(document).ready(function(){
+            $("li .level2").hide();
+//            $("li :nth-child(even)").hide();
+//            $("li[class=level1]").hide();
+//            $(":contains('短袖')").show();
+            $(".level1>a").click(function(){
+                $(this).addClass("current")
+                    .next().show()
+                    .parent().siblings().children("a").removeClass("current")
+                    .next().hide();
+            });
+        });
     </script>
-  </body>
+</body>
 </html>
