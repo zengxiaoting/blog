@@ -1,0 +1,169 @@
+body { 
+    margin: 0; 
+    font-family: 'Varela Round', sans-serif; 
+}
+
+/*Navigation*/
+.col-top{
+    margin-left: 214.667px;
+    padding-left: 15px;
+    padding-right:15px;
+}
+nav{
+    background-color: #242830;
+    align-content: center;
+}
+.pull{
+    display:none;
+}
+nav ul{
+    width:70%;
+    list-style: none;
+    padding: 0;
+}
+nav ul li{
+    color:darkgrey;
+    display: block;
+    margin-left:20px;
+    margin-right: 20px;
+    transition: all 0.5s ease;
+    -moz-transition:all 0.5s ease;
+    -webkit-transition:all 0.5s ease;
+    -o-transitionl:all 0.5s ease;
+    position:left;
+}
+nav ul li a { 
+    color: rgba(255, 255, 255, 0.6); 
+    display: block; 
+    padding: 20px; 
+    transition: all 0.5s ease; 
+    -moz-transition: all 0.5s ease; 
+    -webkit-transition: all 0.5s ease; 
+    -o-transition: all 0.5s ease; 
+    padding-left: 0; 
+    position: relative; 
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+}
+nav ul li a:hover,nav ul li a:focus{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+}
+.right-angle{
+    position: absolute;
+    right: 0px !important;
+}
+.right-angle:before{
+    content: ">";
+}
+/*section*/
+.head{
+    height:750px;
+    background-image: url(img/slam.jpg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: cover;
+    display: block;
+}
+.col-right{
+    position: relative;
+    height: 26px;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+}
+.nav-toggle{
+    position: absolute;
+    padding-top: 10px;
+    padding-right: 35px;
+    padding-bottom: 16px;
+    top:10px;
+    right:10px;
+}
+.nav-toggle span,.nav-toggle span:before,.nav-toggle span:after{
+    background-color: #353535;
+    height:5px;
+    width:35px;
+    display: block;
+    content:"";
+    position: absolute;
+}
+.nav-toggle span:before{
+    top:-10px;
+}
+.nav-toggle span:after{
+    bottom: -10px;
+}
+.nav-toggle.active span{background-color: transparent;}
+.nav-toggle.active span:before{
+    top: 0px;
+    transform: rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+}
+.nav-toggle.active span:after{
+    top:0px;
+    transform: rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+}
+.welcome{
+    text-align: center;
+}
+.photoshow{
+    text-align: center;
+    position: relative;
+    bottom: -200px;
+}
+.photo-container{
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    width: 400px;
+    display: inline-block;
+}
+.photolist{
+    width: 1600px;
+    position: absolute;
+    overflow: hidden;
+    transition: all 0.5s ease; 
+    -moz-transition: all 0.5s ease; 
+    -webkit-transition: all 0.5s ease; 
+    -o-transition: all 0.5s ease;
+    left: 0px;
+}
+.photolist div{
+    position: relative;
+    float: left;
+}
+.photo{
+    height: 200px;
+    width: 400px;
+}
+.control-prev{
+    height:16px;
+    width: 16px;
+    overflow: hidden;
+    background-image: url(img/sprite.png);
+    display: inline-block;
+    top:-100px;
+    left: -20px;
+    position:relative;
+    cursor: pointer;
+}
+.control-next{
+    cursor: pointer;
+    background-position: -15px;
+    height:16px;
+    width: 16px;
+    overflow: hidden;
+    background-image: url(img/sprite.png);
+    display: inline-block;
+    top:-100px;
+    left: 30px;
+    position:relative;
+}

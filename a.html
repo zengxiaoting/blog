@@ -1,15 +1,15 @@
 <html>
     <script>
-String.prototype.render=        function(b){
+String.prototype.render=function(b){
+    var ss=this;
     for(item in b){
-        this.replace("/"+item+"/",b[item]);
-        alert(item);
-        alert(b[item]);
-        alert(this)
+        var re=new RegExp("\\${"+item+"}");
+        ss=ss.replace(re,b[item]);
     }
-    return this;
+    return ss;
 }
 var greeting = 'my name is ${name}, age ${age}';
+greeting.replace(/name/,"123");
 var result = greeting.render({name: 'XiaoMing', age: 11});
 alert(result);  //my name is XiaoMing, age 11
 

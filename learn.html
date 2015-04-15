@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> 
+<![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> 
+<![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zxt's Blog</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="menu">
+            <li class="level1">
+                <a href="#none">衬衫</a>
+                <ul class="level2">
+                    <li><a href="#none">短袖</a></li>
+                    <li><a href="#none">长袖</a></li>
+                </ul>
+            </li>
+            <li class="level1">
+                <a href="#none">卫衣</a>
+                <ul class="level2">
+                    <li><a href="#none">短袖</a></li>
+                    <li><a href="#none">长袖</a></li>
+                </ul>
+            </li>
+            <li class="level1">
+                <a href="#none">裤子</a>
+                <ul class="level2">
+                    <li><a href="#none">短</a></li>
+                    <li><a href="#none">长</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <form id="form1">
+            <div>可用元素  ：<input name="add" value="enable"/></div>
+            <div>不可用元素：<input name="email" disabled="disabled" value="disable"/></div>
+            <div>
+                <input type="checkbox" name="newsletter1" value="1"/>1
+                <input type="checkbox" name="newsletter2" value="2"/>2
+            </div>
+            <div> 
+                <select name="test1">
+                    <option>html</option>
+                    <option>css</option>
+                    <option>jQuery</option>
+                    <option>bootstrap</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <table style="margin:auto">
+        <tr>
+            <td>JavaScript</td>
+            <td>Html</td>
+            <td>Jquery</td>
+        </tr>
+        <tr>
+            <td>JavaScript1</td>
+            <td>Html1</td>
+            <td>Jquery1</td>
+        </tr>
+        <tr>
+            <td>JavaScript2</td>
+            <td>Html2</td>
+            <td>Jquery2</td>
+        </tr>
+    </table>
+    <div align="center"><button class="show">显示全部</button></div>
+    <ul style="list-style:none;display:inline-block;aligh:center">
+        <li style="float:left"><a href="images/img1.jpg"><img width="300px" height="100px" src="images/img1.jpg" alt="1"></a></li>
+        <li style="float:left"><a href="images/img2.jpg"><img width="300px" height="100px" src="images/img2.jpg" alt="2"></a></li>
+    </ul>
+    <script type="text/javascript">
+        var $list=$("table tr:gt(0):not(:last)").hide();
+        $("option").filter(":contains('css')").attr("selected","selected");
+        $("body").css("background","#bbffaa");
+        $("button").click(function(){
+            if($("table tr:gt(0):not(:last)").is(":visible")){
+                $("table tr:gt(0):not(:last)").hide();
+                $(this).text("show");
+                $("table tr:eq(0)").css("color","black");
+            }
+            else{
+                $("table tr:gt(0):not(:last)").show();
+                $(this).text("hide");
+                $("table tr:eq(0)").css("color","red");
+            }
+        });
+        var $t1=$("<tr><td>JS3</td><td>HTML</td><td>jquery</td></tr>");
+        $t1.appendTo("table");
+        $("img").mouseover(function(e){
+            var imgtitle="<br/>"+this.alt;
+            var tooltip="<div id='tooltip'><img src='"+this.src+"' alt='1' width='300px' height='100px'/>"+imgtitle+"</div>";
+            $("body").append(tooltip);
+            $("#tooltip").css({
+                "position":"absolute",
+                "top":(e.pageY+10)+"px",
+                "left":(e.pageX+20)+"px"});
+        }).mouseout(function(){
+                $("#tooltip").remove();
+        }).mousemove(function(e){
+            $("#tooltip").css({
+                    "position":"absolute",
+                    "top":(e.pageY+10)+"px",
+                    "left":(e.pageX+20)+"px"}).show();
+        });
+        $(document).ready(function(){
+            $("li .level2").hide();
+//            $("li :nth-child(even)").hide();
+//            $("li[class=level1]").hide();
+//            $(":contains('短袖')").show();
+            $(".level1>a").click(function(){
+                $(this).addClass("current")
+                    .next().show()
+                    .parent().siblings().children("a").removeClass("current")
+                    .next().hide();
+            });
+        });
+    </script>
+</body>
+</html>

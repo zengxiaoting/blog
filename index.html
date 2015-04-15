@@ -1,113 +1,97 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> 
-<![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> 
-<![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Zxt's Blog</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/jquery-1.11.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</head>
-
-<body>
-    <div class="box">
-        <ul class="menu">
-            <li class="level1">
-                <a href="#none">衬衫</a>
-                <ul class="level2">
-                    <li><a href="#none">短袖</a></li>
-                    <li><a href="#none">长袖</a></li>
-                </ul>
-            </li>
-            <li class="level1">
-                <a href="#none">卫衣</a>
-                <ul class="level2">
-                    <li><a href="#none">短袖</a></li>
-                    <li><a href="#none">长袖</a></li>
-                </ul>
-            </li>
-            <li class="level1">
-                <a href="#none">裤子</a>
-                <ul class="level2">
-                    <li><a href="#none">短</a></li>
-                    <li><a href="#none">长</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div>
-        <form id="form1">
-            <div>可用元素  ：<input name="add" value="enable"/></div>
-            <div>不可用元素：<input name="email" disabled="disabled" value="disable"/></div>
-            <div>
-                <input type="checkbox" name="newsletter1" value="1"/>1
-                <input type="checkbox" name="newsletter2" value="2"/>2
-            </div>
-            <div> 
-                <select name="test1">
-                    <option>html</option>
-                    <option>css</option>
-                    <option>jQuery</option>
-                    <option>bootstrap</option>
-                </select>
-            </div>
-        </form>
-    </div>
-    <table style="margin:auto">
-        <tr>
-            <td>JavaScript</td>
-            <td>Html</td>
-            <td>Jquery</td>
-        </tr>
-        <tr>
-            <td>JavaScript1</td>
-            <td>Html1</td>
-            <td>Jquery1</td>
-        </tr>
-        <tr>
-            <td>JavaScript2</td>
-            <td>Html2</td>
-            <td>Jquery2</td>
-        </tr>
-    </table>
-    <div align="center"><button class="show">显示全部</button></div>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/templete.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body id="top">
+        <header id="head">
+            <nav>
+                <div class="fluid">
+                    <div class="row">
+                        <div class="col-top">
+                            <nav class="pull">
+                                <ul class="navigate">
+                                    <li>
+                                        <a href="#intro">Introduction
+                                            <span class="right-angle"></span></a>
+                                    </li>
+                                    <li><a href="#arti">Article 
+                                            <span class="right-angle"></span></a>                                     </li>
+                                    <li>
+                                        <a href="#pict">Picture
+                                            <span class="right-angle"></span></a>                                     </li>
+                                    <li><a href="#res">Resources
+                                            <span class="right-angle"></span></a>
+                                    </li>
+                                    <li><a href="#intre">Favourites
+                                            <span class="right-angle"></span></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <section class="head">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-right">
+                            <a class="nav-toggle" href="#"><span></span></a>
+                        </div>
+                    </div>
+                    <img>
+                </div>
+                <div class="welcome">
+                    <h1>Welcome!</h1>
+                    <h2>Zxt's Blog</h2>
+                </div>
+                <div class="photoshow">
+                    <div class="control-prev"></div>
+                    <div class="photo-container">
+                        <div class="photolist">
+                            <div><img class="photo" src="images/img4.jpg"></div>
+                            <div><img class="photo" src="images/img3.jpg"></div>
+                            <div><img class="photo" src="images/img2.jpg">></div>
+                        </div>
+                    </div>
+                    <div class="control-next"></div>
+                </div>
+            </section>
+        </header>
+    </body>
     <script type="text/javascript">
-        var $list=$("table tr:gt(0):not(:last)").hide();
-        $("option").filter(":contains('css')").attr("selected","selected");
-        $("body").css("background","#bbffaa");
-        $("button").click(function(){
-            if($("table tr:gt(0):not(:last)").is(":visible")){
-                $("table tr:gt(0):not(:last)").hide();
-                $(this).text("show");
-                $("table tr:eq(0)").css("color","black");
-            }
-            else{
-                $("table tr:gt(0):not(:last)").show();
-                $(this).text("hide");
-                $("table tr:eq(0)").css("color","red");
-            }
-        });
-        var $t1=$("<tr><td>JS3</td><td>HTML</td><td>jquery</td></tr>");
-        $t1.appendTo("table");
-        $(document).ready(function(){
-            $("li .level2").hide();
-//            $("li :nth-child(even)").hide();
-//            $("li[class=level1]").hide();
-//            $(":contains('短袖')").show();
-            $(".level1>a").click(function(){
-                $(this).addClass("current")
-                    .next().show()
-                    .parent().siblings().children("a").removeClass("current")
-                    .next().hide();
-            });
-        });
+        $(function(){
+            $(".control-next").click(function(){
+                if(!$(".photolist").is(":animated")){
+                    if($(".photolist").css("left")=="-800px"){
+                        $(".photolist").animate({"left":"0px"},"fast");
+                    }
+                    else{
+                        $(".photolist").animate({"left":"-=400px"},100);
+                    }
+                }
+            })
+            $(".control-prev").click(function(){
+                if(!$(".photolist").is(":animated")){
+                    if($(".photolist").css("left")=="0px"){
+                        $(".photolist").animate({"left":"-800px"},"fast");
+                    }
+                    else{
+                        $(".photolist").animate({"left":"+=400px"},100);
+                    }
+                }
+            })
+            $(".nav-toggle").click(function(){
+                $(".pull").slideToggle();
+                this.classList.toggle("active");
+            })
+        })
     </script>
-</body>
 </html>
