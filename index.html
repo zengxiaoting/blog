@@ -77,10 +77,10 @@
         $(function(){
             var left=0;
             $("#send").click(function(){
-                $('#request').load("a.html");
+                $('#request').load("learn.html").show();
             })
             $("#hide").click(function(){
-                $('#request').html("");
+                $('#request').html("").hide();
             })
             setInterval(function(){
                 if(!$(".photolist").is(":animated")){
