@@ -78,6 +78,9 @@
             var left=0;
             $("#send").click(function(){
                 $('#request').load("learn.html").show();
+                $('html body').animate({
+                            scrollTop:$('#request').offset().top
+                        },2000);
             })
             $("#hide").click(function(){
                 $('#request').html("").hide();
