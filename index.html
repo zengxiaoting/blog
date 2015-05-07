@@ -58,34 +58,76 @@
                         <div class="photolist">
                             <div><img class="photo" src="images/img4.jpg"></div>
                             <div><img class="photo" src="images/img3.jpg"></div>
-                            <div><img class="photo" src="images/img2.jpg">></div>
+                            <div><img class="photo" src="images/img2.jpg"></div>
+                            <div><img class="photo" src="images/item1.jpg"></div>
                         </div>
                     </div>
                     <div class="control-next"></div>
                 </div>
             </section>
         </header>
+        <section class="intro" id="intro">
+            <input type="button" id="send" value="ajax">
+            <input type="button" id="hide" value="hide">
+            <div><a href="#top">Just For Fun!!!!!</a></div>
+            <div id="request"></div>
+        </section>
     </body>
     <script type="text/javascript">
         $(function(){
-            $(".control-next").click(function(){
+            var left=0;
+            $("#send").click(function(){
+                $('#request').load("a.html");
+            })
+            $("#hide").click(function(){
+                $('#request').html("");
+            })
+            setInterval(function(){
                 if(!$(".photolist").is(":animated")){
-                    if($(".photolist").css("left")=="-800px"){
+                    if(left==-1200){
+                        left=0;
                         $(".photolist").animate({"left":"0px"},"fast");
                     }
                     else{
-                        $(".photolist").animate({"left":"-=400px"},100);
+                        left-=400;
+                        $(".photolist").animate({"left":left+"px"},100);
+                    }
+                }
+            },2000)
+            $(".control-next").click(function(){
+                if(!$(".photolist").is(":animated")){
+                    if(left==-1200){
+                        left=0;
+                        $(".photolist").animate({"left":"0px"},"fast");
+                    }
+                    else{
+                        left-=400;
+                        $(".photolist").animate({"left":left+"px"},100);
                     }
                 }
             })
             $(".control-prev").click(function(){
                 if(!$(".photolist").is(":animated")){
-                    if($(".photolist").css("left")=="0px"){
-                        $(".photolist").animate({"left":"-800px"},"fast");
+                    if(left==0){
+                        left=-1200;
+                        $(".photolist").animate({"left":"-1200px"},"fast");
                     }
                     else{
-                        $(".photolist").animate({"left":"+=400px"},100);
+                        left+=400;
+                        $(".photolist").animate({"left":left+"px"},100);
                     }
+                }
+            })
+            $('a[href*=#]:not([href=#])').click(function(){
+                if(location.pathname.replace(/^\//,'')===this.pathname.replace(/^\//,'')&&location.hostname===this.hostname){
+                    var target=$(this.hash);
+                    target=target.length?target:$('[name='+this.hash.slice(1)+']');
+                    if(target.length){
+                        $('html body').animate({
+                            scrollTop:target.offset().top
+                        },2000);
+                    }
+                    return false;
                 }
             })
             $(".nav-toggle").click(function(){

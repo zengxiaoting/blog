@@ -1,17 +1,32 @@
+<!DOCTYPE html>
 <html>
-    <script>
-String.prototype.render=function(b){
-    var ss=this;
-    for(item in b){
-        var re=new RegExp("\\${"+item+"}");
-        ss=ss.replace(re,b[item]);
-    }
-    return ss;
-}
-var greeting = 'my name is ${name}, age ${age}';
-greeting.replace(/name/,"123");
-var result = greeting.render({name: 'XiaoMing', age: 11});
-alert(result);  //my name is XiaoMing, age 11
-
+    <head>
+        <script src="js/jquery-1.11.2.min.js"></script>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+        var $canvas=$("<canvas id='canvas' width='340' height='340'/>");
+        $canvas.css("background","#222");
+        $("body").append($canvas);
+        $canvas.show();
+        var ds={};
+        ds.x=$canvas.height()/2;
+        ds.y=$canvas.width()/2;
+        var cc=document.getElementById("canvas");
+        var ctx=cc.getContext("2d");
+        function drawCharactor(x,y,color,strokecolor){
+            ctx.fillStyle="#"+color;
+            ctx.fillRect(x,y,30,30);
+            ctx.fill();
+            
+            ctx.strokeStyle="#"+strokecolor;
+            ctx.strokeRect(x,y,30,30);
+        }
+        var render= function(){
+            drawCharactor(ds.x,ds.y,"AAAAAA","ffffff");
+            drawCharactor(30,30,"eb381d","ffffff");
+        }
+        render();
     </script>
 </html>
