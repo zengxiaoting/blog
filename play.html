@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/templete2.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body id="top">
+        <header id="head">
+            <nav>
+                <div class="fluid">
+                    <div class="row">
+                        <div class="col-top">
+                            <nav class="pull">
+                                <ul class="navigate">
+                                    <li>
+                                        <a href="#intro">Introduction
+                                            <span class="right-angle"></span></a>
+                                    </li>
+                                    <li><a href="#arti">Article 
+                                            <span class="right-angle"></span></a>                                     </li>
+                                    <li>
+                                        <a href="#pict">Picture
+                                            <span class="right-angle"></span></a>                                     </li>
+                                    <li><a href="#res">Resources
+                                            <span class="right-angle"></span></a>
+                                    </li>
+                                    <li><a href="#intre">Favourites
+                                            <span class="right-angle"></span></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <section class="head">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-right">
+                            <a class="nav-toggle" href="#"><span></span></a>
+                        </div>
+                    </div>
+                    <img>
+                </div>
+                <div class="welcome">
+                    <h1>Welcome!</h1>
+                    <h2>Zxt's Blog</h2>
+                </div>
+                <div class="photoshow">
+                    <div class="control-prev"></div>
+                    <div class="photo-container">
+                        <div class="photolist">
+                            <div><img class="photo" src="images/img4.jpg"></div>
+                            <div><img class="photo" src="images/img3.jpg"></div>
+                            <div><img class="photo" src="images/img2.jpg"></div>
+                            <div><img class="photo" src="images/item1.jpg"></div>
+                        </div>
+                    </div>
+                    <div class="control-next"></div>
+                </div>
+            </section>
+        </header>
+        <section class="intro" id="intro">
+            <input type="button" id="send" value="ajax">
+            <input type="button" id="hide" value="hide">
+            <div><a href="#top">Just For Fun!!!!!</a></div>
+            <div id="request"></div>
+        </section>
+
+    </body>
+    <script type="text/javascript">
+        $(function(){
+
+            var left=0;
+            $("#send").click(function(){
+                $('#request').load("learn.html").show();
+                $('html body').animate({
+                            scrollTop:$('#request').offset().top
+                        },2000);
+            })
+            $("#hide").click(function(){
+                $('#request').html("").hide();
+            })
+            setInterval(function(){
+                if(!$(".photolist").is(":animated")){
+                    if(left==-1200){
+                        left=0;
+                        $(".photolist").animate({"left":"0px"},"fast");
+                    }
+                    else{
+                        left-=400;
+                        $(".photolist").animate({"left":left+"px"},100);
+                    }
+                }
+            },2000)
+            $(".control-next").click(function(){
+                if(!$(".photolist").is(":animated")){
+                    if(left==-1200){
+                        left=0;
+                        $(".photolist").animate({"left":"0px"},"fast");
+                    }
+                    else{
+                        left-=400;
+                        $(".photolist").animate({"left":left+"px"},100);
+                    }
+                }
+            })
+            $(".control-prev").click(function(){
+                if(!$(".photolist").is(":animated")){
+                    if(left==0){
+                        left=-1200;
+                        $(".photolist").animate({"left":"-1200px"},"fast");
+                    }
+                    else{
+                        left+=400;
+                        $(".photolist").animate({"left":left+"px"},100);
+                    }
+                }
+            })
+            $('a[href*=#]:not([href=#])').click(function(){
+                if(location.pathname.replace(/^\//,'')===this.pathname.replace(/^\//,'')&&location.hostname===this.hostname){
+                    var target=$(this.hash);
+                    target=target.length?target:$('[name='+this.hash.slice(1)+']');
+                    if(target.length){
+                        $('html body').animate({
+                            scrollTop:target.offset().top
+                        },2000);
+                    }
+                    return false;
+                }
+            })
+            $(".nav-toggle").click(function(){
+                $(".pull").slideToggle();
+                this.classList.toggle("active");
+            })
+        })
+    </script>
+</html>

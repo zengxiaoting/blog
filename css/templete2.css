@@ -1,12 +1,13 @@
-body{
-    text-align: center;
+body { 
+    margin: 0; 
+    font-family: 'Varela Round', sans-serif; 
 }
-.col-right{
-    position: relative;
-    height: 26px;
-    width: 100%;
-    text-align: right;
-    padding-right: 15px;
+
+/*Navigation*/
+.col-top{
+    margin-left: 214.667px;
+    padding-left: 15px;
+    padding-right:15px;
 }
 nav{
     background-color: #242830;
@@ -55,6 +56,26 @@ nav ul li a:hover,nav ul li a:focus{
 .right-angle:before{
     content: ">";
 }
+/*section*/
+.head{
+    height:750px;
+    background-image: url(img/slam.jpg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: cover;
+    display: block;
+}
+.col-right{
+    position: relative;
+    height: 26px;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+}
 .nav-toggle{
     position: absolute;
     padding-top: 10px;
@@ -90,108 +111,68 @@ nav ul li a:hover,nav ul li a:focus{
     -webkit-transform:rotate(-45deg);
     -ms-transform:rotate(-45deg);
 }
-.container{
-    margin:0px;
-    width:100%;
-    background-color: lightgrey;
-    height:200px;
+.welcome{
+    text-align: center;
 }
-.name{
+.photoshow{
+    text-align: center;
+    position: relative;
+    bottom: -200px;
+}
+.photo-container{
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    width: 400px;
+    display: inline-block;
+}
+.photolist{
+    width: 1600px;
+    position: absolute;
+    overflow: hidden;
+    transition: all 0.5s ease; 
+    -moz-transition: all 0.5s ease; 
+    -webkit-transition: all 0.5s ease; 
+    -o-transition: all 0.5s ease;
+    left: 0px;
+}
+.photolist div{
+    position: relative;
     float: left;
-    padding: 30px;
-    width: 200px;
 }
 .photo{
-    float:left;
-    margin: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    border: 1px solid grey;
-    border-radius: 15px;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 400px;
+}
+.control-prev{
+    height:16px;
+    width: 16px;
     overflow: hidden;
+    background-image: url(img/sprite.png);
+    display: inline-block;
+    top:-100px;
+    left: -20px;
+    position:relative;
+    cursor: pointer;
 }
-img{
-    height: 150px;
-    width: 150px;
-}
-.contact{
-    float:right;
-    text-align: left;
-}
-.me{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    text-align: center;
-}
-.me p{
-    font-weight: 400;
-    font-size: 17px;
-    color: #7F8A90;
-}
-.me p.first{
-    font-weight: 700;
-    font-size: 18px;
-    color: #7F8A90;
-    margin: 10px 0px 15px;
-}
-.edu{
-    position: relative;
-    text-align: center;
-    top:2em;
-    background-color: azure;
-    height:500px;
-}
-.edu-header{
-    background-color:aquamarine;
-    border-radius: 15px;
-    width: 140px;
-    height: cover;
-    align-content: center;
+.control-next{
+    cursor: pointer;
+    background-position: -15px;
+    height:16px;
+    width: 16px;
     overflow: hidden;
-    font-size: 30px;
+    background-image: url(img/sprite.png);
+    display: inline-block;
+    top:-100px;
+    left: 30px;
+    position:relative;
 }
-span.divide-line {
-    z-index:1;
-    width: 3px;
-    height: 450px;
-    position: absolute;
-    top: 39px;
-    display: initial;
-    background: none repeat scroll 0% 0% #D4D4D4;
+.news{
+    background-color: grey;
 }
-.edu-content-right{
-    width: 40%;
-    text-align: left;
-    position: absolute;
-    top: 6em;
-    right: 5.8em;
+.news img{
+    float: left;
 }
-.edu-content-left{
-    width: 40%;
-    text-align: right;
-    position: absolute;
-    top: 6em;
-    left: 5.8em;
-}
-.edu-content h4{
-    font-size: 18px;
-    font-weight: 800;
-}
-
-.edu-content-right:before {
-    content: url(../images/sec-d.png)no-repeat 0px 0px;
-    position: relative;
-    left: -3.9em;
-    top: 4em;
-}
-
-.edu-content-left:after{
-    content: url(../images/sec-d.png)no-repeat 0px 0px;
-    position: relative;
-    left: 4em;
-    top: -4em;   
+.news p{
+    float: right;
 }

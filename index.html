@@ -1,125 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/templete.css" rel="stylesheet">
-        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta charset="utf-8"></meta>
+        <title>曾晓霆的个人简历</title>
+        <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css"></link>
+        <link rel="stylesheet" href="css/templete.css"></link>
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </head>
-    <body id="top">
-        <header id="head">
-            <nav>
-                <div class="fluid">
-                    <div class="row">
-                        <div class="col-top">
-                            <nav class="pull">
-                                <ul class="navigate">
-                                    <li>
-                                        <a href="#intro">Introduction
-                                            <span class="right-angle"></span></a>
-                                    </li>
-                                    <li><a href="#arti">Article 
-                                            <span class="right-angle"></span></a>                                     </li>
-                                    <li>
-                                        <a href="#pict">Picture
-                                            <span class="right-angle"></span></a>                                     </li>
-                                    <li><a href="#res">Resources
-                                            <span class="right-angle"></span></a>
-                                    </li>
-                                    <li><a href="#intre">Favourites
-                                            <span class="right-angle"></span></a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+    <body>
+      <nav>
+            <div class="fluid">
+                <div class="row">
+                    <div class="col-top">
+                        <nav class="pull">
+                            <ul class="navigate">
+                                <li>
+                                    <a href="#me">我的介绍
+                                        <span class="right-angle"></span></a>
+                                </li>
+                                <li><a href="#edu">教育程度&工作经验 
+                                        <span class="right-angle"></span></a>                                     </li>
+                                <li>
+                                    <a href="#skill">技能评估
+                                        <span class="right-angle"></span></a>                                     </li>
+                                <li><a href="#exp">获奖情况
+                                        <span class="right-angle"></span></a>
+                                </li>
+                                <li><a href="#hob">个人爱好
+                                        <span class="right-angle"></span></a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
-            </nav>
-            <section class="head">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-right">
-                            <a class="nav-toggle" href="#"><span></span></a>
-                        </div>
-                    </div>
-                    <img>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-right">
+                    <a class="nav-toggle" href="#"><span></span></a>
                 </div>
-                <div class="welcome">
-                    <h1>Welcome!</h1>
-                    <h2>Zxt's Blog</h2>
+            </div>
+            <div class="row">
+                <div class="name">
+                    <h1 class="text-primary">曾晓霆</h1>
+                    <p>
+                        <span class="glyphicon glyphicon-paperclip"></span>
+                        Henry Zeng
+                    </p>
+                    <p>中山大学</p>
                 </div>
-                <div class="photoshow">
-                    <div class="control-prev"></div>
-                    <div class="photo-container">
-                        <div class="photolist">
-                            <div><img class="photo" src="images/img4.jpg"></div>
-                            <div><img class="photo" src="images/img3.jpg"></div>
-                            <div><img class="photo" src="images/img2.jpg"></div>
-                            <div><img class="photo" src="images/item1.jpg"></div>
-                        </div>
-                    </div>
-                    <div class="control-next"></div>
+                <div class="photo">
+                    <img src="images/photo.jpeg">
                 </div>
-            </section>
-        </header>
-        <section class="intro" id="intro">
-            <input type="button" id="send" value="ajax">
-            <input type="button" id="hide" value="hide">
-            <div><a href="#top">Just For Fun!!!!!</a></div>
-            <div id="request"></div>
-        </section>
+                <div class="contact">
+                    <p><span class="glyphicon glyphicon-phone">13631202982/13684902220</span></p>
+                    <p><span class="glyphicon glyphicon-envelope">2510946230@qqcom</span></p>
+                    <p><span class="glyphicon glyphicon-road">深圳市新桥景城花园</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="me" id="me">
+            <h3 class="top-title">About me</h3>
+            <span class="line"></span>
+            <p class="first">本人是一名在校大三学生。</br>性格偏向内敛但易于沟通，</br>做事踏实但也不缺乏灵巧，</br>尊崇团队至上但不随波逐流，</br></br>
+            </p>
+            <p class="second">尽管缺乏工作经验，但我相信可以用我的热情我的努力来完成应该完成得任务，并能够从中不断完善我的各方面能力。</p>
+        </div>
+        <div class="edu" id="edu">
+            <span class="edu-header">Education&Experience</span>
+            <div class="div-line"><span class="divide-line"></span>
+            </div>
+            <div class="edu-content-left"><h4>软件工程 工程学士</h4>
+                <p>中山大学2012至今</p>
+                <p>学习主要课程：软件设计，计算机组成原理</br>操作系统，算法设计,移动应用开发等</br></p>
+            </div>
+            <div class="edu-content-right" style="top:12em"><h4>中大职协</h4>
+                <p>职业推介部副部长2012-2014</p>
+                <p>主要活动：收集企业信息，举办讲座，写策划</p>
+            </div>
+            <div class="edu-content-left" style="top:18em"><h4>"同桌的你"</h4>
+                <p>2014-2015</p>
+                <p>基于微软云的社交软件</br>主要负责安卓界面及部分后台</p>
+            </div>
+            <div class="edu-content-right" style="top:24em"><h4>Github个人博客</h4>
+                <p>2015至今</p>
+                <p>通过学习Jquery以及Bootstrap在github上搭建静态博客</p>
+            </div>
+        </div>
     </body>
     <script type="text/javascript">
         $(function(){
-            var left=0;
-            $("#send").click(function(){
-                $('#request').load("learn.html").show();
-                $('html body').animate({
-                            scrollTop:$('#request').offset().top
-                        },2000);
-            })
-            $("#hide").click(function(){
-                $('#request').html("").hide();
-            })
-            setInterval(function(){
-                if(!$(".photolist").is(":animated")){
-                    if(left==-1200){
-                        left=0;
-                        $(".photolist").animate({"left":"0px"},"fast");
-                    }
-                    else{
-                        left-=400;
-                        $(".photolist").animate({"left":left+"px"},100);
-                    }
-                }
-            },2000)
-            $(".control-next").click(function(){
-                if(!$(".photolist").is(":animated")){
-                    if(left==-1200){
-                        left=0;
-                        $(".photolist").animate({"left":"0px"},"fast");
-                    }
-                    else{
-                        left-=400;
-                        $(".photolist").animate({"left":left+"px"},100);
-                    }
-                }
-            })
-            $(".control-prev").click(function(){
-                if(!$(".photolist").is(":animated")){
-                    if(left==0){
-                        left=-1200;
-                        $(".photolist").animate({"left":"-1200px"},"fast");
-                    }
-                    else{
-                        left+=400;
-                        $(".photolist").animate({"left":left+"px"},100);
-                    }
-                }
+            $(".nav-toggle").click(function(){
+                $(".pull").slideToggle();
+                this.classList.toggle("active");
             })
             $('a[href*=#]:not([href=#])').click(function(){
                 if(location.pathname.replace(/^\//,'')===this.pathname.replace(/^\//,'')&&location.hostname===this.hostname){
@@ -132,10 +108,6 @@
                     }
                     return false;
                 }
-            })
-            $(".nav-toggle").click(function(){
-                $(".pull").slideToggle();
-                this.classList.toggle("active");
             })
         })
     </script>

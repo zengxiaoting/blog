@@ -82,11 +82,16 @@
         <li style="float:left"><a href="images/img1.jpg"><img width="300px" height="100px" src="images/img1.jpg" alt="1"></a></li>
         <li style="float:left"><a href="images/img2.jpg"><img width="300px" height="100px" src="images/img2.jpg" alt="2"></a></li>
     </ul>
+    <div class="news"> 
+        <img src="images/item1.jpg" alt="my pic" />
+        <p>清除浮动的例子:</p>
+        <button class="ff" style="float:right">清除浮动</button>
+    </div>
     <script type="text/javascript">
         var $list=$("table tr:gt(0):not(:last)").hide();
         $("option").filter(":contains('css')").attr("selected","selected");
         $("body").css("background","#bbffaa");
-        $("button").click(function(){
+        $(".show").click(function(){
             if($("table tr:gt(0):not(:last)").is(":visible")){
                 $("table tr:gt(0):not(:last)").hide();
                 $(this).text("show");
@@ -128,6 +133,17 @@
                     .next().hide();
             });
         });
+        //            alert($(".ff").prop("checked"));
+        $(".ff").click(function(){
+            if($(this).html()=="清除浮动"){
+                $(".news").css("overflow","hidden");
+                $(this).html("浮动效果");
+            }
+            else{
+                $(".news").css("overflow","");
+                $(this).html("清除浮动");
+            }
+        })
     </script>
 </body>
 </html>
