@@ -195,3 +195,20 @@ span.divide-line {
     left: 4em;
     top: -4em;   
 }
+.skill-container{
+    height:400px;
+}
+.skill{
+    margin: 4em;
+    width:40%; 
+    background-color:coral;
+    float: left;
+    text-align: left;
+}
+.hobby{
+    margin: 10px;
+}
+.hobby p span{
+    margin:30px;
+    font-size: 40px;
+}
