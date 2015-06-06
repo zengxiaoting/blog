@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>FILE</title>
+    </head>
+    <body onload="init()">
+        选择文件：
+        <input type="file" id="file" multiple size="80"/>
+        <input type="button" onclick="Showfilename();" value="文件上传"/>
+        <input type="button" onclick="showpicture();" value="图片展示"><br/>
+        文件长度：<span id="size"></span><br/>
+        文件内容：<span id="type"></span><br/>
+        <h1>简单拖放示例</h1>
+        <div id="dragme" draggable="true" style="width:200px;border:1px solid grey;">请拖放：</div>
+        <div id="text" style="width:200px;height:200px;border:1px solid gray;"></div>
+    </body>
+
+    <script type="text/javascript">
+        function Showfilename(){
+            var file;
+            for(var i=0;i<document.getElementById("file").files.length;i++){
+                file=document.getElementById("file").files[i];
+                alert(file.name);
+                document.getElementById("size").innerHTML=file.size;
+                var reader= new FileReader();
+                reader.readAsText(file);
+                reader.onload=function(f){
+                    document.getElementById("type").innerHTML=this.result;
+                }
+            }
+        }
+        function showpicture(){
+            var file;
+            for(var i=0;i<document.getElementById("file").files.length;i++){
+                file=document.getElementById("file").files[i];
+                var reader=new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload=function(f){
+                    document.getElementById("type").innerHTML="<img src='"+this.result+"' alt=''/>";
+                }
+            }
+        }
+        function init(){
+            var source=document.getElementById("dragme");
+            var dest=document.getElementById("text");
+            source.addEventListener("dragstart",function(ev){
+                var dt=ev.dataTransfer;
+                dt.effectAllowed="all";
+                dt.setData("text/plain","你好");
+            },false);
+            dest.addEventListener("dragend",function(ev){
+                ev.preventDefault();
+            },false);
+            dest.addEventListener("drop",function(ev){
+                var dt=ev.dataTransfer;
+                var text=dt.getData("text/plain","你好");
+                dest.textContent+=text;
+                ev.preventDefault();
+                ev.stopPropagation();
+            },false);
+            document.ondragover=function(e){e.preventDefault();};
+            document.ondrop=function(e){e.preventDefault();};
+        }
+    </script>
+</html> 
