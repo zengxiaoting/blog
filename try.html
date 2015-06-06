@@ -46,14 +46,14 @@
             source.addEventListener("dragstart",function(ev){
                 var dt=ev.dataTransfer;
                 dt.effectAllowed="all";
-                dt.setData("text/plain","你好");
+                dt.setData("text/plain",this.innerHTML);
             },false);
             dest.addEventListener("dragend",function(ev){
                 ev.preventDefault();
             },false);
             dest.addEventListener("drop",function(ev){
                 var dt=ev.dataTransfer;
-                var text=dt.getData("text/plain","你好");
+                var text=dt.getData("text/plain");
                 dest.textContent+=text;
                 ev.preventDefault();
                 ev.stopPropagation();
