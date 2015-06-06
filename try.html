@@ -41,11 +41,14 @@
             }
         }
         function init(){
+            var dragIcon= document.createElement("img");
+            dragIcon.src="/images/icon.gif";
+            dragIcon.style="width:5px;height:5px;";
             var source=document.getElementById("dragme");
             var dest=document.getElementById("text");
             source.addEventListener("dragstart",function(ev){
                 var dt=ev.dataTransfer;
-                dt.effectAllowed="all";
+                dt.setDragImage(dragIcon,-10,-10);
                 dt.setData("text/plain",this.innerHTML);
             },false);
             dest.addEventListener("dragend",function(ev){
