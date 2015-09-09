@@ -202,9 +202,58 @@ function prepareGallery(){
 		}
 	}
 }
+function highlightRows(){
+	if(!document.getElementsByTagName) return false;
+	var trs = document.getElementsByTagName("tr");
+	for(var i=0;i<trs.length;i++){
+		trs[i].oldClassName = trs[i].className;	
+		trs[i].onmouseover = function(){
+			var oldClass = trs.className;
+			addClass(this,"highlight");
+		}
+		trs[i].onmouseout = function(){
+			this.className = this.oldClassName;
+		}
+	}
+}
+function displayAbbreviations(){
+	if(!document.getElementsByTagName || !document.createElement || !document.createTextNode) return false;
+	var abbreviations = document.getElementsByTagName("abbr");
+	var defs = new Array();
+	for(var i =0;i<abbreviations.length;i++){
+		var current_abbr = abbreviations[i];
+		if (current_abbr.childNodes.length<1) continue;
+		var definition = current_abbr.getAttribute("title");
+		var key = current_abbr.lastChild.nodeValue;
+		defs[key] = definition;
+	}
+	var dlist = document.createElement("dl");
+	for(key in defs){
+		var definition = defs[key];
+		var dtitle = document.createElement("dt");
+		var dtitle_text = document.createTextNode(key);
+		dtitle.appendChild(dtitle_text);
+		var ddesc = document.createElement("dd");
+		var ddesc_text = document.createTextNode(defs[key]);
+		ddesc.appendChild(ddesc_text);
+		dlist.appendChild(dtitle);
+		dlist.appendChild(ddesc);
+	}
+	if(dlist.childNodes.length<1) return false;
+	var header = document.createElement("h3");
+	var header_text = document.createTextNode("Abbreviations");
+	header.appendChild(header_text);
+	var articles = document.getElementsByTagName("article");
+	if(articles.length == 0)return false;
+	var container = articles[0];
+	container.appendChild(header);
+	container.appendChild(dlist);
+}
 
 addLoadEvent(highlightPage);
 addLoadEvent(prepareSlideshow);
 addLoadEvent(prepareInternalnav);
 addLoadEvent(preparePlaceholder);
 addLoadEvent(prepareGallery);
+addLoadEvent(highlightRows);
+addLoadEvent(displayAbbreviations);
