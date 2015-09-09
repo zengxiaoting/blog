@@ -249,6 +249,18 @@ function displayAbbreviations(){
 	container.appendChild(header);
 	container.appendChild(dlist);
 }
+function focuslabel(){
+	if(!document.getElementsByTagName || !document.getElementById) return false;
+	var labels = document.getElementsByTagName("label");
+	for(var i=0;i<labels.length;i++){
+		var foc = labels[i].getAttribute("for");
+		if(!document.getElementById(foc)) return false;
+		labels[i].onclick = function(){
+			var ele = document.getElementById(foc);
+			ele.focus();
+		}
+	}
+}
 
 addLoadEvent(highlightPage);
 addLoadEvent(prepareSlideshow);
@@ -257,3 +269,4 @@ addLoadEvent(preparePlaceholder);
 addLoadEvent(prepareGallery);
 addLoadEvent(highlightRows);
 addLoadEvent(displayAbbreviations);
+addLoadEvent(focuslabel);
