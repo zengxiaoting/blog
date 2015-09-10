@@ -261,6 +261,98 @@ function focuslabel(){
 		}
 	}
 }
+function displayAjaxLoading(element){
+	while(element.hasChildNodes()){
+		element.removeChild(element.lastChild);
+	}
+	var content = document.createElement("img");
+	content.setAttribute("src","images/loading.gif");
+	content.setAttribute("alt","Loading..");
+	element.appendChild(content);
+}
+function submitFormWithAjax(whicform,thetarget){
+	var request;
+	if(window.ActiveXObject){
+		request = new ActiveXObject("Microsoft.XMLHTTP");
+	}else if(window.XMLHttpRequest){
+		request = new XMLHttpRequest();
+	}else{ return false;}
+	displayAjaxLoading(thetarget);
+	var dataParas = [];
+	var element;
+	for(var i=0;i<whicform.elements;i++){
+		element = whicform.elements[i];
+		dataParas[i] = element.name + '=' + encodeURIComponent(element.value);
+	}
+	var data = dataParas.join("&");
+	request.open("post",whicform.getAttribute("action"),true);
+	request.setRequestHeader("Content-type","application/x-www-form-urlencode");
+	request.onreadystatechange = function(){
+		alert(!);
+		if(request.readyState == 4){
+			if(request.status == 200 || request.status==0){
+				alert(1);
+				var matches = request.responseText.match(/<article>([\s\S+])<\/article>/);
+				if(matches.length>0){
+					thetarget.innerHTML = matches[1];
+				}else{
+					thetarget.innerHTML = "<p>Oops,there was an error!Sorry</p>";
+				}
+			}else{
+				thetarget.innerHTML = request.statusText;
+			}
+		}
+	}
+	request.send(data);
+		alert(thetarget.innerHTML);
+	return true;
+}
+function prepareForms(){
+	for(var i=0;i<document.forms.length;i++){
+		var thisform = document.forms[i];
+		thisform.onsubmit = function(){
+			var article = document.getElementsByTagName("article")[0];
+			if(submitFormWithAjax(this,article)) return false;
+			return false;
+		}
+	}
+}
+
+var provinceList = [
+{name:'Beijing', cityList:[         
+{name:'市辖区', areaList:['东城区','西城区','崇文区','宣武区','朝阳区','丰台区','石景山区','海淀区','门头沟区','房山区','通州区','顺义区','昌平区','大兴区','怀柔区','平谷区']},
+{name:'县', areaList:['密云县','延庆县']}
+]},
+{name:'Guangdong', cityList:[         
+{name:'市辖区', areaList:['黄浦区','卢湾区','徐汇区','长宁区','静安区','普陀区','闸北区','虹口区','杨浦区','闵行区','宝山区','金山区','松江区','青浦区','南汇区','奉贤区']},   
+{name:'县', areaList:['崇明县']}
+]}
+];
+function provinceChange(){
+	if(!document.getElementById("Province")) return false;
+	province = document.getElementById("Province");
+	city = document.getElementById("City");
+	province.onchange = function(){
+		provinceName = province.options[province.selectedIndex].getAttribute("value");
+		for(var i=0;i<provinceList.length;i++){
+			if(provinceList[i].name!=provinceName) continue;
+			else{
+				citys = provinceList[i].cityList[0].areaList;
+				city.options.length=0;
+				for(var j=0;j<citys.length;j++){
+					var option = document.createElement("option");
+					option.setAttribute("value",citys[j]);
+					option.innerHTML = citys[j];
+					city.appendChild(option);
+				}
+				
+			}
+		}
+		return true;
+	}
+}
+
+
 
 addLoadEvent(highlightPage);
 addLoadEvent(prepareSlideshow);
@@ -270,3 +362,5 @@ addLoadEvent(prepareGallery);
 addLoadEvent(highlightRows);
 addLoadEvent(displayAbbreviations);
 addLoadEvent(focuslabel);
+addLoadEvent(provinceChange);
+addLoadEvent(prepareForms);
