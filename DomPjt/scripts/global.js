@@ -288,7 +288,7 @@ function submitFormWithAjax(whicform,thetarget){
 	request.open("post",whicform.getAttribute("action"),true);
 	request.setRequestHeader("Content-type","application/x-www-form-urlencode");
 	request.onreadystatechange = function(){
-		alert(!);
+		alert(789);
 		if(request.readyState == 4){
 			if(request.status == 200 || request.status==0){
 				alert(1);
